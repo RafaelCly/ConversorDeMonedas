@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         int opcion = 1;
-        while(opcion < 7 && opcion > 0) {
-            Scanner lectura = new Scanner(System.in);
+        Scanner lectura = new Scanner(System.in);
+        while( opcion != 7) {
             System.out.println("*******************************");
             System.out.println("Bienvenido al conversor de monedas :D");
             System.out.println("1) Dólar => Peso argentino");
@@ -24,42 +24,43 @@ public class Principal {
             if ( opcion > 0 && opcion < 7) {
                 System.out.println("Ingrese la cantidad: ");
                 double cantidad = Double.parseDouble(lectura.nextLine());
-                Conversor result = new Conversor();
+                Conversor resultado = new Conversor();
                 double res = 0;
                 switch (opcion) {
                     case 1:
                         System.out.println(moneda.conversion_rates().getARS());
-                        res = result.convertir(opcion, cantidad, moneda.conversion_rates().getARS());
+                        res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getARS());
                         break;
                     case 2:
                         System.out.println(moneda.conversion_rates().getARS());
-                        res = result.convertir(opcion, cantidad, moneda.conversion_rates().getARS());
+                        res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getARS());
                         break;
                     case 3:
                         System.out.println(moneda.conversion_rates().getBRL());
-                        res = result.convertir(opcion, cantidad, moneda.conversion_rates().getBRL());
+                        res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getBRL());
                         break;
                     case 4:
                         System.out.println(moneda.conversion_rates().getBRL());
-                        res = result.convertir(opcion, cantidad, moneda.conversion_rates().getBRL());
+                        res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getBRL());
                         break;
                     case 5:
                         System.out.println(moneda.conversion_rates().getCOP());
-                        res = result.convertir(opcion, cantidad, moneda.conversion_rates().getCOP());
+                        res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getCOP());
                         break;
                     case 6:
                         System.out.println(moneda.conversion_rates().getCOP());
-                        res = result.convertir(opcion, cantidad, moneda.conversion_rates().getCOP());
-                        break;
-                    case 7:
+                        res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getCOP());
                         break;
                     default:
-                        System.out.println("Esta opción no es válida!");
                         break;
                 }
                 if (opcion != 7) {
                     System.out.println("El resultado es " + res);
                 }
+            } else if (opcion != 7){
+                System.out.println("Opcion no válida");
+            } else {
+                System.out.println("Hasta luego!");
             }
         }
     }
