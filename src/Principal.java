@@ -28,34 +28,31 @@ public class Principal {
                 double res = 0;
                 switch (opcion) {
                     case 1:
-                        System.out.println(moneda.conversion_rates().getARS());
                         res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getARS());
+                        System.out.println(cantidad + " USD son " + res + " ARS" );
                         break;
                     case 2:
-                        System.out.println(moneda.conversion_rates().getARS());
                         res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getARS());
+                        System.out.println(cantidad + " ARS son " + res + " USD" );
                         break;
                     case 3:
-                        System.out.println(moneda.conversion_rates().getBRL());
                         res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getBRL());
+                        System.out.println(cantidad + " USD son " + res + " BRL" );
                         break;
                     case 4:
-                        System.out.println(moneda.conversion_rates().getBRL());
                         res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getBRL());
+                        System.out.println(cantidad + " BRL son " + res + " USD" );
                         break;
                     case 5:
-                        System.out.println(moneda.conversion_rates().getCOP());
                         res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getCOP());
+                        System.out.println(cantidad + " USD son " + res + " COP" );
                         break;
                     case 6:
-                        System.out.println(moneda.conversion_rates().getCOP());
                         res = resultado.convertir(opcion, cantidad, moneda.conversion_rates().getCOP());
+                        System.out.println(cantidad + " COP son " + res + " USD" );
                         break;
                     default:
                         break;
-                }
-                if (opcion != 7) {
-                    System.out.println("El resultado es " + res);
                 }
             } else if (opcion != 7){
                 System.out.println("Opcion no válida");
